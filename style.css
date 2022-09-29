@@ -31,6 +31,7 @@ header h1{
 .menu{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .burger-menu{
@@ -44,10 +45,13 @@ header h1{
     position: absolute;
     list-style-type:none;
     background-color : rgba(125,125,125,0.6);
-    margin-top : calc(25px + 64px + 25px) ;
-    width: calc(100vw - 25px );
+    /*margin-top : calc(25px + 64px + 25px) ;*/
+    /* width: calc(100vw - 25px );*/
     padding-right: 25px;
-    translate: calc(-100vw + (25px + 64px));
+    right: 0;
+    left:-100vw;
+    top: calc(64px + 50px);
+    /*translate: calc(-100vw + (25px + 64px));*/
 }
 
 .list-menu li{
