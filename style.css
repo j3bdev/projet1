@@ -38,7 +38,7 @@ header h1{
 }
 
 .list-menu{
-    display: flex;            /* faux le mettre en none pour disparaitre */
+    display: none;            /* faux le mettre en none pour disparaitre */
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
