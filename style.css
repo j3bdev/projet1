@@ -10,8 +10,6 @@
 body{
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-    background-color: black;
-
 }
 
 
@@ -20,6 +18,9 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100vw;
+    position: fixed;
+    position: -webkit-sticky;
+    background-color: black;
 }
 
 header h1{
@@ -30,7 +31,6 @@ header h1{
 .menu{
     display: flex;
     flex-direction: column;
-    position: relative;
 }
 
 .burger-menu{
@@ -64,3 +64,10 @@ header h1{
     color: aqua;
 }
 
+.main_picture{
+    background-color: aquamarine;
+    height: 100vh;
+}
+.presentation{
+    margin: 5vw;
+}
