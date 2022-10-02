@@ -26,7 +26,40 @@
         </nav>
     </header>
     <main>
+        <section class="corps">
+            <section class="corps-contact-p">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque
+                    placeat ipsum voluptatem nisi
+                    nulla incidunt magnam, omnis voluptates. A ea laboriosam quaerat reiciendis magni illum ab ut
+                    voluptatem
+                    odit quidem placeat unde, totam accusantium omnis reprehenderit delectus recusandae sapiente!
+                </p>
+            </section>
 
+            <form class="formulaire" method="post" action="traitement.php">
+
+                <label for="pseudo">Votre Contact :</label>
+
+                <input type="text" name="pseudo" id="pseudo" placeholder="John Doe" size="30" maxlength="10" required />
+                <!-- eciture grisé dans la cellule 10 caractère max -->
+                <input type="email" name="email" id="email" placeholder="john.doe@japrendlecode.fr" size="30"
+                    required />
+
+
+                <label for="commentaire">Quel type de commentaire ?</label>
+                <select name="commentaire" id="commentaire">
+                    <option value="commentaire">commentaire</option>
+                    <option value="question">question</option>
+                    <option value="compliment">compliment</option>
+                    <option value="autre">autre</option>
+                </select>
+
+                <textarea name="ameliorer" id="ameliorer" rows="10">ici texte dans la case</textarea>
+
+                <input type="submit" value="Envoyer" class="bouton-envoyer" />
+            </form>
+
+        </section>
     </main>
     <footer>
 

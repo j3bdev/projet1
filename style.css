@@ -1,18 +1,21 @@
-*{
+/* ------ RESET ------ */
+*, ::after, ::before{
     margin : 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* ------ Variable ------ */
 :root{
     --font-color:white;
 }
 
+/* ------ Début du Code ------ */
 body{
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
 }
 
-
+/* ------ Menu ------ */
 header{
     display: flex;
     justify-content: space-between;
@@ -24,7 +27,7 @@ header{
 }
 
 header h1{
-    margin-left: 3vw;
+    /*margin-left: 50vw;*/
     color: var(--font-color) ;
 }
 
@@ -35,7 +38,10 @@ header h1{
 }
 
 .burger-menu{
-    margin: 25px 25px 25px 0;
+    margin: 25px 50px 25px 0;
+}
+.burger-menu:hover{
+    cursor: pointer;    /* permet de mettre le curseur comme format lien */
 }
 
 .list-menu{
@@ -54,8 +60,9 @@ header h1{
     /*translate: calc(-100vw + (25px + 64px));*/
 }
 
+
 .list-menu li{
-    padding: 5px 0;
+    padding: 5px 25px 5px 0;
 }
 
 .item{ 
@@ -68,10 +75,59 @@ header h1{
     color: aqua;
 }
 
+/* ------------------- */
+/* ------ CORPS ------ */
+.corps{
+    padding-top: 114px;  /* décalage du contenu mais pas de la boite */
+    height: 100vh ;
+    background-color : pink ;
+
+}
+
+/* ------ Page Home ------ */ 
 .main_picture{
     background-color: aquamarine;
     height: 100vh;
 }
 .presentation{
     margin: 5vw;
+}    
+
+/* ------ Page Contact ------ */
+.corps-contact-p
+{
+    background-color: grey;
+    padding: 3%;
+    margin: 5%;
 }
+
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    margin: 5%;
+}
+.formulaire:last-child{
+    align-items: flex-end;
+}
+
+.formulaire *:not(.bouton-envoyer){
+    width: 100%;
+    padding: 5px 3%;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+.bouton-envoyer{
+    font-size: large;
+    padding: 5px 10px;  
+}
+
+:required { 
+    background-color: red;
+ }
