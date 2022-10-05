@@ -8,11 +8,14 @@
 /* ------ Variable ------ */
 :root{
     --font-color:white;
+    --background-color:black;
 }
 
 /* ------ Début du Code ------ */
 body{
     font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+
 }
 
 /* ------ Menu ------ */
@@ -29,6 +32,7 @@ header{
 header h1{
     /*margin-left: 50vw;*/
     color: var(--font-color) ;
+    margin-left: 50px;
 }
 
 .menu{
@@ -86,13 +90,34 @@ header h1{
 
 /* ------ Page Home ------ */ 
 .main_picture{
-    background-color: aquamarine;
-    height: 100vh;
+    /*background: no-repeat url("picture/2016-st-malo-chute.jpg") ;
+    background-position: top 114px;*/
+    padding-top: 114px;  /* décalage du contenu mais pas de la boite */
+    /*height: auto;
+    width: 100vw; */
+}
+.main_picture img{
+    height: calc(100vh - 114px);
+    width: 100vw;
+    object-fit: cover; /* permet a l'image de ce caller sur le premier parametre qui lui plait */
 }
 .presentation{
     margin: 5vw;
+    color: var(--font-color);
 }    
 
+.bouton-page-home{
+    display: inline-block;
+    background: linear-gradient(lightgrey, black);
+    left: 50%;
+    padding: 5px 20px;
+    font-size: 2em;
+    color: var(--font-color);
+    border: 2px grey solid;
+    border-radius: 5px;
+    
+
+}
 /* ------ Page Contact ------ */
 .corps-contact-p
 {
