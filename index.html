@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" sizes="16x16" href="assets/icons8-camera-16.png">
     <title>The Da Vinci Book</title>
 </head>
 
@@ -27,7 +28,8 @@
     </header>
     <main>
         <section class="main_picture">
-            <img src="/picture/2016-st-malo-chute.jpg" alt="chute le long d'une digue">
+            <img srcset="/picture/2016-st-malo-chute-responsive-sans-signature.jpg 800w, /picture/2016-st-malo-chute.jpg 1620w"
+                sizes="max-width:800px" alt="chute le long d'une digue">
         </section>
         <section class="presentation">
             <h1>Mieux me connaitre</h1>
@@ -71,12 +73,11 @@
                 centaines).
             </p>
         </section>
-        <section>
-            <!-- Lien vers la page Galerie -->
-            <a href="galerie.html" class="bouton-page-home">Découvrir mon Travail</a>
-
+        <section class="center">
+            <button class="bouton-page-home" type="button" onclick="window.location.href = 'galerie.html';">
+                Découvrir mon Travail
+            </button>
         </section>
-
     </main>
     <footer>
 
