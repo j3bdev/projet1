@@ -1,4 +1,4 @@
-/* ------ RESET ------ */
+/* ----------------------------------- RESET ---------------------------------- */
 *{
     margin : 0;
     padding: 0;
@@ -8,16 +8,16 @@
 ::-webkit-scrollbar{
     display: none;
 }
-/* ------ Variable ------ */
+/* --------------------------------- Variable --------------------------------- */
 :root{
     --font-color:white;
     --background-color:black;
     --header-height: 114px;
-    --navbar-color : white;
+    --navbar-color : white;  /* Changer la couleur du burger */
     --header-font-color : white;
 }
 
-/* ------ Début du Code ------ */
+/* ------------------------------- Début du Code ------------------------------ */
 body{
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
@@ -27,8 +27,17 @@ body{
     text-align: center;
 }
 
-/* -------------------------- */
-/* ------ Menu Header ------- */
+/* permet de mettre le curseur comme format lien */
+.burger,
+.color-choice button,
+.bouton-page-home:hover{
+    cursor: pointer;    
+}
+
+
+/* ---------------------------------------------------------------------------- */
+/* -------------------------------- Menu Header ------------------------------- */
+/* ---------------------------------------------------------------------------- */
 header{
     display: flex;
     justify-content: space-between;
@@ -44,8 +53,7 @@ header h1{
     margin-left: 50px;
 }
 
-/* logo fait main burger */
-
+/* -------------------------- logo fait main burger --------------------------- */
 .burger{
     display:block;
     position:relative ;
@@ -53,9 +61,8 @@ header h1{
     width: 64px;
     height: 64px;
     background: transparent;
-    cursor: pointer;
-    margin: 25px 50px 25px 0;
-    border: 2px solid white;
+    margin: 25px 40px 25px 0;
+    border: 2px solid white; /* boite carré */
 }
 .bar{
     display: block;
@@ -63,6 +70,7 @@ header h1{
     height: 4px;
     border-radius: 3px;
     background:var(--navbar-color);
+    
 }
 .bar::before,
 .bar::after{
@@ -82,35 +90,14 @@ header h1{
     transform:translateY(+12px)
 }
 
-/* ANIMATION BURGER */
-.burger.open .bar {
-    transform: translateX ( -50px);
-    background: transparent;
-}
-
-.burger.open .bar::before{
-    transform : rotate(45deg) translate(0px, 0px);
-}
-.burger.open .bar::after{
-    transform : rotate(-45deg) translate(0px, 0px);
-}
-
 .menu{
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-.burger-menu{
-    margin: 25px 50px 25px 0;
-}
-.burger-menu:hover,
-.bouton-page-home:hover{
-    cursor: pointer;    /* permet de mettre le curseur comme format lien */
-}
-
 .list-menu{
-    display: none;            /* faux le mettre en none pour disparaitre */
+    display: flex;            /* faux le mettre en none pour disparaitre */
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
@@ -120,6 +107,8 @@ header h1{
     right: 0;
     left:-100vw;
     top: calc(64px + 50px);
+    margin-left: 160vw;
+    
 }
 
 .list-menu li{
@@ -137,12 +126,32 @@ header h1{
     font-weight: bold; /* par défaut si écriture en gras, le passage en hover le fait rétrécir */
 }
 
-/* -------------------------- */
-/* ---------- FOOTER -------- */
+/* ------------------------- ANIMATION LISTE ET BURGER ------------------------- */
+.burger.open .bar {
+    transform: translateX ( -50px);
+    background: transparent;
+}
+
+.burger.open .bar::before{
+    transition: transform 0.3s ease-in-out;
+    transform : rotate(45deg);
+}
+.burger.open .bar::after{
+    transition: transform 0.3s ease-in-out;
+    transform : rotate(-45deg);
+}
+.list-menu.open{
+    margin-left: initial;
+    transition: margin 0.3s ease-in-out;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* ---------------------------------- FOOTER ---------------------------------- */
+/* ---------------------------------------------------------------------------- */
 .color-choice{
     margin: 3% 0 ;
-    text-align: center;
 }
+
 .color-choice button{
     font-size: 2rem;
     padding: 5px;
@@ -150,17 +159,9 @@ header h1{
     height: 50px;
 }
 
-
-/* -------------------------- */
-/* ---------- CORPS --------- */
-.corps{
-    padding-top: var(--header-height);  /* décalage du contenu mais pas de la boite */
-    height: 100vh ;
-    background-color : var(--background-color) ;
-}
-
-/* -------------------------- */
-/* -------- Page Home ------- */ 
+/* ---------------------------------------------------------------------------- */
+/* --------------------------------- Page Home -------------------------------- */ 
+/* ---------------------------------------------------------------------------- */
 .main_picture{
     padding-top: var(--header-height); /* décalage du contenu mais pas de la boite */
     /* la boite commence au top mais son contenu a la hauteur de la variable */
@@ -187,9 +188,9 @@ header h1{
     margin-bottom: 50px;
 }
 
-/* -------------------------- */
-/* ------ Page Galerie ------ */
-
+/* ---------------------------------------------------------------------------- */
+/* -------------------------------- Page Galerie ------------------------------ */
+/* ---------------------------------------------------------------------------- */
 .galerie{
     padding-top: var(--header-height);
 }
@@ -198,19 +199,26 @@ header h1{
     width: calc(100vw - 1rem) ;
     object-fit: fill;
 }
-
+/*
 .galerie img:first-child{
     margin-top: 20px;
-}
+}*/
 
 .galerie img:last-child{
     margin-bottom: 50px;
 }
 
 
-/* -------------------------- */
-/* ------ Page Contact ------ */
-.corps-contact-p
+/* ---------------------------------------------------------------------------- */
+/* ------------------------------- Page Contact ------------------------------- */
+/* ---------------------------------------------------------------------------- */
+.contact{
+    padding-top: var(--header-height);  /* décalage du contenu mais pas de la boite */
+    /*height: 100vh ;*/
+    /*background-color : var(--background-color) ;*/
+}
+
+.contact-p
 {
     background-color: grey;
     padding: 3%;
@@ -254,24 +262,22 @@ input{
     /* ne pas utiliser tant que je suis sur format au dessus de smartphone
 }*/
 
+/* ---------------------------------------------------------------------------- */
+/*                                   MEDIA QUERY                                */
+/* ---------------------------------------------------------------------------- */
 @media screen and (min-width: 581px) {
     header{
         height: var(--header-height);
     }
-
     .menu{
         display: flex;
         flex-direction: row;
         position: initial;
     }
-
-
     .burger{
         display: none;
     }
-    .burger-menu{
-        display: none;
-    }
+
     .list-menu{
         position: initial;
         display: flex;
@@ -279,14 +285,20 @@ input{
         justify-content: space-between;
         background-color: initial;
         left:initial;
+        margin-left: 0;
+        transition: none;
+    
     }
     .item:hover{
         color: grey;
         font-weight: bold; /* par défaut si écriture en gras, le passage en hover le fait rétrécir */
     }
 
-    /* -------------------------- */
-    /* ------ Media Galerie ----- */
+    /* ------------------------------------------------------------------------ */
+    /* ----------------------------- Media HOME ---------------------------- */
+
+    /* ------------------------------------------------------------------------ */
+    /* ----------------------------- Media GALERY ---------------------------- */
     .galerie{
         display: grid;
         grid-template-columns: repeat(4,auto) ;
@@ -308,7 +320,7 @@ input{
         margin-bottom: initial;
     }
 
-    /* Gestion de l'image pour fullScreen */
+    /*  ------------------Gestion de l'image pour fullScreen  ------------------*/
     .modal-content {
         margin: auto;
         display: block;
@@ -344,9 +356,9 @@ input{
         cursor: zoom-out;
     }
 
-    /* -------------------------- */
-    /* ------ Media Contact ----- */
-    .corps-contact-p,
+    /* ------------------------------------------------------------------------ */
+    /* ----------------------------- Media Contact ---------------------------- */
+    .contact-p,
     .formulaire{
         margin: auto;
         width: 80vw;
@@ -354,7 +366,7 @@ input{
 }
 
 @media screen and (min-width: 881px) {
-    .corps-contact-p,
+    .contact-p,
     .formulaire{
         margin: auto;
         width: 60vw;

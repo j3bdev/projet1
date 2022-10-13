@@ -1,27 +1,18 @@
-/* Boucle pour le burgerMenu */
+/* --- Boucle pour le Menu Burger --- */
 const menuBtn = document.querySelector("#burger");
 const ul = document.querySelector("#list-menu");
 let menuOpen = false;
 function openCloseNav() {
   if (!menuOpen) {
     menuBtn.classList.add("open");
-    ul.style.display = "flex";
     menuOpen = true;
+    ul.classList.add("open");
   } else {
     menuBtn.classList.remove("open");
     menuOpen = false;
-    ul.style.display = "none";
+    ul.classList.remove("open");
   }
 }
-
-/*
-function openCloseNav() {
-  if (ul.style.display != "none") {
-    ul.style.display = "none";
-  } else {
-    ul.style.display = "flex";
-  }
-}*/
 
 /* Fonction pour affichage grand ecran */
 const divCacher = document.querySelector("#hiden-div");
