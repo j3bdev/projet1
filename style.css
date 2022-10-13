@@ -104,10 +104,9 @@ header h1{
     list-style-type:none;
     background-color : rgba(125,125,125,0.6);
     padding-right: 25px;
-    right: 0;
-    left:-100vw;
     top: calc(64px + 50px);
-    margin-left: 160vw;
+    left: 30vw ;
+    right: -50vw;
     
 }
 
@@ -141,8 +140,9 @@ header h1{
     transform : rotate(-45deg);
 }
 .list-menu.open{
-    margin-left: initial;
-    transition: margin 0.3s ease-in-out;
+    left: -80vw ;
+    right: 0;
+    transition: all 0.3s ease-out;
 }
 
 /* ---------------------------------------------------------------------------- */
