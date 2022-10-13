@@ -287,9 +287,11 @@ input{
         flex-direction: row;
         justify-content: space-between;
         background-color: initial;
-        left:initial;
-        margin-left: 0;
         transition: none;
+        /*margin-left: 0;*/
+        width: initial;
+       /* left: initial ;
+        right: initial;*/
     
     }
     .item:hover{
