@@ -106,7 +106,7 @@ header h1{
     padding-right: 25px;
     top: calc(64px + 50px);
     width: 0;
-    left: 80vw ;
+    left: 100vw ;
     right: -100vw;
 }
 
