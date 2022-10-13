@@ -105,10 +105,9 @@ header h1{
     background-color : rgba(125,125,125,0.6);
     padding-right: 25px;
     top: calc(64px + 50px);
-    /*width: 0;*/
+    width: 0;
     left: 80vw ;
-    right: -80vw;
-    
+    right: -100vw;
 }
 
 .list-menu li{
@@ -141,7 +140,7 @@ header h1{
     transform : rotate(-45deg);
 }
 .list-menu.open{
-    /* width: initial; */
+    width: initial; 
     left: -90vw ;
     right: 0; 
     transition: all 0.3s ease-out;
