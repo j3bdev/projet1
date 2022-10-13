@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <h1>My Book</h1>
+        <h1>My Web Book</h1>
         <nav class="menu">
             <img src="/assets/menu_burger_64px.png" width="64" height="64" alt="Bouton du menu" class="burger-menu"
                 id="burger" onclick="openCloseNav()">
@@ -27,40 +27,48 @@
         </nav>
     </header>
     <main>
-        <div id="divCacher">
-            <img class="modal-content" id="full-image" onclick="close_model()">
+        <div id="hiden-div" onclick="closeModel()">
+            <img class="modal-content" id="full-image">
         </div>
+
         <section class="galerie">
             <img src="/picture/2013-kyoto-palais.jpg" alt="Kinkaku-ji palais doré de Kyoto" class='img-source'
-                onclick="full_screenPicture(this.src)">
+                onclick="fullScreenPicture(this.src)">
             <img src=" /picture/2016-ecosse-culloden.jpg" alt="Maison en pierre sur le lieu de la bataille de culloden"
-                class='img-source' onclick="full_screenPicture(this.src)">
-            <img src=" /picture/2016-ecosse-edimbourg.jpg" alt="chateau d'edimbourg" class='img-source'
-                onclick="full_screenPicture(this.src)">
-            <img src="/picture/2016-lucie-blé.jpg" alt="femme rousse dans un champ de blé" class='img-source'
-                onclick="full_screenPicture(this.src)">
+                class='img-source' onclick="fullScreenPicture(this.src)">
             <img src="/picture/2016-yasmine-vert-responsive.jpg" alt="femme rousse sur fond vert" class='img-source'
-                onclick="full_screenPicture(this.src)">
-            <img src="/picture/2018-alisson-gorges-responsive.jpg" alt="femme brune posé sur la guillotine d'une écluse"
-                class='img-source' onclick="full_screenPicture(this.src)">
+                onclick="fullScreenPicture(this.src)">
+            <img src=" /picture/2016-ecosse-edimbourg.jpg" alt="chateau d'edimbourg" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2019-laeticia.jpg" alt="femme qui fait une grimace sur un fond noir" class='img-source'
+                onclick="fullScreenPicture(this.src)">
             <img src="/picture/2018-flo-vigne-responsive.jpg" alt="femme brune dans un vignoble" class='img-source'
-                onclick="full_screenPicture(this.src)">
+                onclick="fullScreenPicture(this.src)">
             <img src="/picture/2018-priscilla-rose-responsive.jpg"
                 alt="femme blonde avec une couronne de fleur sur un fond rose" class='img-source'
-                onclick="full_screenPicture(this.src)">
+                onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2018-alisson-gorges-responsive.jpg" alt="femme brune posé sur la guillotine d'une écluse"
+                class='img-source' onclick="fullScreenPicture(this.src)">
             <img src="/picture/2019-alix-leo-responsive.jpg" alt="montage d'un enfant" class='img-source'
-                onclick="full_screenPicture(this.src)">
+                onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2019-allisson.jpg" alt="femme qui boit un thé devant une fenêtre" class='img-source'
+                onclick="fullScreenPicture(this.src)">
             <img src="/picture/2014-amsterdam-responsive.jpg" alt="maison autour d'une rivière" class='img-source'
-                onclick="full_screenPicture(this.src)">
-            <img src="/picture/2013-kyoto-palais.jpg" alt="" class='img-source' onclick="full_screenPicture(this.src)">
-            <img src="/picture/2013-kyoto-palais.jpg" alt="" class='img-source' onclick="full_screenPicture(this.src)">
+                onclick="fullScreenPicture(this.src)">
+
+            <img src="/picture/2016-lucie-blé.jpg" alt="femme rousse dans un champ de blé" class='img-source'
+                onclick="fullScreenPicture(this.src)">
         </section>
 
 
 
     </main>
     <footer>
-
+        <div class="color-choice">
+            <button onclick="changeColorBackground(`white`)">☀</button>
+            <button onclick="changeColorBackground(`grey`)">🌥</button>
+            <button onclick="changeColorBackground(`black`)">🌇</button>
+        </div>
     </footer>
     <div id="id_view_image_body"></div>
     <div id="id_view_image"></div>
