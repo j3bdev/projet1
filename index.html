@@ -1,30 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <title>The Da Vinci Book stach stach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" sizes="16x16" href="assets/icons8-camera-16.png">
+    <title>The Da Vinci Book</title>
 </head>
 
 <body>
     <header>
-        <h1>My Book</h1>
-        <nav class="menu">
-            <img src="/assets/burger_menu_64px.png" alt="Menu" class="burger-menu">
-            <ul class="list-menu">
+        <h1>My Web Book</h1>
+        <nav class="menu" role="navigation">
+            <button class="burger" id="burger" onclick="openCloseNav()">
+                <span class="bar"></span>
+            </button>
+
+            <!-- au départ mon burger menu était une image -->
+            <!--
+            <img src="/assets/menu_burger_64px.png" width="64" height="64" alt="Bouton du menu" class="burger-menu"
+                id="burger" onclick="openCloseNav()">
+            -->
+            <ul class="list-menu" id="list-menu">
                 <li><a href="index.html" class="item">Home</a></li>
                 <li><a href="galerie.html" class="item">Galery</a></li>
-                <li><a href="index.html" class="item">Contact Me</a></li>
+                <li><a href="contact.html" class="item">Contact Me</a></li>
             </ul>
         </nav>
     </header>
     <main>
-
+        <section class="main_picture">
+            <img srcset="/picture/2016-st-malo-chute-responsive.jpg 800w, /picture/2016-st-malo-chute.jpg 1620w"
+                sizes="max-width:800px" alt="chute le long d'une digue">
+        </section>
+        <section class="presentation">
+            <h1>Mieux me connaitre</h1>
+            <p>
+                Je fais de la photo par plaisir, je marche essentiellement sur le principe de la collaboration.<br>
+                Je préfère faire peu de photos mais en sortitr des exeptionnelles qu'une grande quantités.
+                Autrement dit, si une image ne me plait pas, elle ne sera pas traitée.
+                Néanmoins, mes modèles peuvent bien entendu m'indiquer leurs coups de cœur même si cela ne m'engage pas
+                à sortir la photo.
+                Je reste très ouvert, et j'aime communiquer, pour faire un vrai travail d'équipe.
+            </p>
+            <br>
+            <h1>Mon Fonctionnement</h1>
+            <p>
+                Un shooting en “collaboration” est un échange (le modèle m'offre de son temps pour poser et je lui offre
+                des photos retouchées), c'est un shooting sans rémunération.<br>
+                Lors du shooting, nous signons un contrat ensemble, pour vous donner le droit d'utiliser mon
+                travail.
+                <br>
+                Je ne vois pas d'inconvénient à ce qu'un modèle vienne accompagner lors d'un shooting. Par contre,
+                pendant la séance, je préfère que l'accompagnateur/trice ne reste pas sur place afin de ne pas perturber
+                la/le modèle.
+                <br>
+                Je ne fourni pas les brutes, car il s'agit de travail non terminé. Quand les retouches sont terminées,
+                je vous envoie ma sélection de photos.
+                Vous pouvez utiliser les images sur le support que vous souhaitez, par contre il est interdit de
+                modifier les images (cela comprend le masquage de la signature, le redimensionnement, ou toute autre
+                modification du fichier).
+                <br>
+                Je ne donne pas les images sans signature sauf certaines conditions. Qui seront vu ensemble.
+                Si vous souhaitez que votre nom ou votre visage n'apparaisse pas sur les photos ou en commentaire il
+                suffit de me le dire pour la préparation du projet et le shooting prendra en compte ces conditions. il
+                se peut aussi que je garde ces images uniquement pour une <em>exposition</em> et aucune publication sur
+                internet.
+                <br>
+                Lors de la signature du contrat, n'oubliez pas de préciser si vous souhaitez utiliser un pseudonyme, que
+                je reprendrai partout sans faire apparaître votre nom nulle part.
+                Avant la séance, il y a la phase de préparation : nous discutons d'un thème, choisissons un lieu adapté,
+                ainsi que différentes tenues ou poses qui iraient pour le projet. Pendant la séance (qui dure entre 2h
+                et 5h, ou une journée pour les projets plus complexes), je prends beaucoup de photos (plusieurs
+                centaines).
+            </p>
+        </section>
+        <section class="center">
+            <button class="bouton-page-home" type="button" onclick="window.location.href = 'galerie.html';">
+                Découvrir mon Travail
+            </button>
+        </section>
     </main>
     <footer>
-
+        <div class="color-choice center">
+            <button onclick="changeColorBackground(`white`)">☀</button>
+            <button onclick="changeColorBackground(`grey`)">🌥</button>
+            <button onclick="changeColorBackground(`black`)">🌇</button>
+        </div>
     </footer>
+    <script src="script.js"></script>
 </body>

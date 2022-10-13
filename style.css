@@ -1,32 +1,374 @@
-body{
+/* ----------------------------------- RESET ---------------------------------- */
+*{
     margin : 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: orange;
-    text-decoration: none;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+/* --------------------------------- Variable --------------------------------- */
+:root{
+    --font-color:white;
+    --background-color:black;
+    --header-height: 114px;
+    --navbar-color : white;  /* Changer la couleur du burger */
+    --header-font-color : white;
+}
+
+/* ------------------------------- Début du Code ------------------------------ */
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+
+.center{
+    text-align: center;
+}
+
+/* permet de mettre le curseur comme format lien */
+.burger,
+.color-choice button,
+.bouton-page-home:hover{
+    cursor: pointer;    
 }
 
 
+/* ---------------------------------------------------------------------------- */
+/* -------------------------------- Menu Header ------------------------------- */
+/* ---------------------------------------------------------------------------- */
 header{
     display: flex;
-    border: 1px solid red;
     justify-content: space-between;
     align-items: center;
+    width: 100vw;
+    position: fixed;    
+    position: -webkit-sticky;
+    background-color: black;
 }
-header>h1{
-    margin-left: 5vw;
+
+header h1{
+    color: var(--header-font-color) ;
+    margin-left: 50px;
+}
+
+/* -------------------------- logo fait main burger --------------------------- */
+.burger{
+    display:block;
+    position:relative ;
+    padding: 0 8px;
+    width: 64px;
+    height: 64px;
+    background: transparent;
+    margin: 25px 40px 25px 0;
+    border: 2px solid white; /* boite carré */
+}
+.bar{
+    display: block;
+    width: 44px;
+    height: 4px;
+    border-radius: 3px;
+    background:var(--navbar-color);
+    
+}
+.bar::before,
+.bar::after{
+    content: "";
+    width: 44px;
+    height: 4px;
+    border-radius: 3px;
+    position: absolute;
+    left: 8px;
+    background:var(--navbar-color);
+    
+}
+.bar::before{
+    transform:translateY(-12px)
+}
+.bar::after{
+    transform:translateY(+12px)
 }
 
 .menu{
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-.burger-menu{
-   margin-right: 5vw;
-}
-
-.list-menu>li{
+.list-menu{
+    display: flex;            /* faux le mettre en none pour disparaitre */
+    flex-direction: column;
+    align-items: flex-end;
     position: absolute;
     list-style-type:none;
+    background-color : rgba(125,125,125,0.6);
+    padding-right: 25px;
+    right: 0;
+    left:-100vw;
+    top: calc(64px + 50px);
+    margin-left: 160vw;
+    
 }
 
+.list-menu li{
+    padding: 5px 25px 5px 0;
+}
+
+.item{ 
+    text-decoration: none;
+    color: var(--header-font-color) ;
+    font-size: 2.5rem;
+    white-space: nowrap;
+}
+.item:hover{
+    color: rgb(41, 37, 37);
+    font-weight: bold; /* par défaut si écriture en gras, le passage en hover le fait rétrécir */
+}
+
+/* ------------------------- ANIMATION LISTE ET BURGER ------------------------- */
+.burger.open .bar {
+    transform: translateX ( -50px);
+    background: transparent;
+}
+
+.burger.open .bar::before{
+    transition: transform 0.3s ease-in-out;
+    transform : rotate(45deg);
+}
+.burger.open .bar::after{
+    transition: transform 0.3s ease-in-out;
+    transform : rotate(-45deg);
+}
+.list-menu.open{
+    margin-left: initial;
+    transition: margin 0.3s ease-in-out;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* ---------------------------------- FOOTER ---------------------------------- */
+/* ---------------------------------------------------------------------------- */
+.color-choice{
+    margin: 3% 0 ;
+}
+
+.color-choice button{
+    font-size: 2rem;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* --------------------------------- Page Home -------------------------------- */ 
+/* ---------------------------------------------------------------------------- */
+.main_picture{
+    padding-top: var(--header-height); /* décalage du contenu mais pas de la boite */
+    /* la boite commence au top mais son contenu a la hauteur de la variable */
+}
+.main_picture img{
+    height: calc(100vh - var(--header-height));
+    width: 100vw;
+    object-fit: cover; /* permet a l'image de ce caller sur le premier parametre qui lui plait */
+}
+.presentation{
+    margin: 5vw;
+    color: var(--font-color);
+    font-size: 1.3rem;
+}    
+
+.bouton-page-home{
+    background: linear-gradient(lightgrey, black);
+    align-self: center;
+    padding: 5px 20px;
+    font-size: 2em;
+    color: white;
+    border: 1px grey solid;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* -------------------------------- Page Galerie ------------------------------ */
+/* ---------------------------------------------------------------------------- */
+.galerie{
+    padding-top: var(--header-height);
+}
+.galerie img{
+    margin: 0.5rem;
+    width: calc(100vw - 1rem) ;
+    object-fit: fill;
+}
+/*
+.galerie img:first-child{
+    margin-top: 20px;
+}*/
+
+.galerie img:last-child{
+    margin-bottom: 50px;
+}
+
+
+/* ---------------------------------------------------------------------------- */
+/* ------------------------------- Page Contact ------------------------------- */
+/* ---------------------------------------------------------------------------- */
+.contact{
+    padding-top: var(--header-height);  /* décalage du contenu mais pas de la boite */
+    /*height: 100vh ;*/
+    /*background-color : var(--background-color) ;*/
+}
+
+.contact-p
+{
+    background-color: grey;
+    padding: 3%;
+    margin: 5%;
+}
+
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    margin: 5%;
+}
+
+.formulaire:last-child{
+    align-items: flex-end;
+}
+
+.formulaire *:not(.bouton-envoyer){
+    width: 100%;
+    padding: 5px 3%;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+.bouton-envoyer{
+    font-size: large;
+    padding: 5px 10px;  
+}
+
+:required { 
+    background-color: red;
+ }
+
+/*
+ @media screen and (max-width: 480px) {
+    /* ne pas utiliser tant que je suis sur format au dessus de smartphone
+}*/
+
+/* ---------------------------------------------------------------------------- */
+/*                                   MEDIA QUERY                                */
+/* ---------------------------------------------------------------------------- */
+@media screen and (min-width: 581px) {
+    header{
+        height: var(--header-height);
+    }
+    .menu{
+        display: flex;
+        flex-direction: row;
+        position: initial;
+    }
+    .burger{
+        display: none;
+    }
+
+    .list-menu{
+        position: initial;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: initial;
+        left:initial;
+        margin-left: 0;
+        transition: none;
+    
+    }
+    .item:hover{
+        color: grey;
+        font-weight: bold; /* par défaut si écriture en gras, le passage en hover le fait rétrécir */
+    }
+
+    /* ------------------------------------------------------------------------ */
+    /* ----------------------------- Media HOME ---------------------------- */
+
+    /* ------------------------------------------------------------------------ */
+    /* ----------------------------- Media GALERY ---------------------------- */
+    .galerie{
+        display: grid;
+        grid-template-columns: repeat(4,auto) ;
+        grid-template-rows: repeat(3,auto) ;
+        gap: 2vw;      
+        padding: calc(var(--header-height) + 5px) 2vw 0 2vw;
+    }
+
+    .galerie img{
+        width: calc(((100vw - 10vw)/4));
+        margin: initial;
+        align-self: center;
+        cursor: zoom-in;
+    }
+
+    .galerie img:first-child,
+    .galerie img:last-child {
+        margin-top: initial;
+        margin-bottom: initial;
+    }
+
+    /*  ------------------Gestion de l'image pour fullScreen  ------------------*/
+    .modal-content {
+        margin: auto;
+        display: block;
+        object-fit: contain;
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
+    .modal-content {
+        animation-name: zoom;
+        animation-duration: 0.4s;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+        to {
+            transform: scale(1)
+        }
+    }
+
+    #hiden-div {
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #hiden-div:hover {
+        cursor: zoom-out;
+    }
+
+    /* ------------------------------------------------------------------------ */
+    /* ----------------------------- Media Contact ---------------------------- */
+    .contact-p,
+    .formulaire{
+        margin: auto;
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width: 881px) {
+    .contact-p,
+    .formulaire{
+        margin: auto;
+        width: 60vw;
+    }
+}

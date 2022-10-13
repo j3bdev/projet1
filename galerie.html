@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" sizes="16x16" href="assets/icons8-camera-16.png">
+    <title>The Da Vinci Book</title>
+</head>
+
+<body>
+    <header>
+        <h1>My Web Book</h1>
+        <nav class="menu" role="navigation">
+            <button class="burger" id="burger" onclick="openCloseNav()">
+                <span class="bar"></span>
+            </button>
+
+            <!-- au départ mon burger menu était une image -->
+            <!--
+            <img src="/assets/menu_burger_64px.png" width="64" height="64" alt="Bouton du menu" class="burger-menu"
+                id="burger" onclick="openCloseNav()">
+            -->
+            <ul class="list-menu" id="list-menu">
+                <li><a href="index.html" class="item">Home</a></li>
+                <li><a href="galerie.html" class="item">Galery</a></li>
+                <li><a href="contact.html" class="item">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="hiden-div" onclick="closeModel()">
+            <img class="modal-content" id="full-image">
+        </div>
+
+        <section class="galerie">
+            <img src="/picture/2013-kyoto-palais.jpg" alt="Kinkaku-ji palais doré de Kyoto" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+            <img src=" /picture/2016-ecosse-culloden.jpg" alt="Maison en pierre sur le lieu de la bataille de culloden"
+                class='img-source' onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2016-yasmine-vert-responsive.jpg" alt="femme rousse sur fond vert" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+            <img src=" /picture/2016-ecosse-edimbourg.jpg" alt="chateau d'edimbourg" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2019-laeticia.jpg" alt="femme qui fait une grimace sur un fond noir" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2018-flo-vigne-responsive.jpg" alt="femme brune dans un vignoble" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2018-priscilla-rose-responsive.jpg"
+                alt="femme blonde avec une couronne de fleur sur un fond rose" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2018-alisson-gorges-responsive.jpg" alt="femme brune posé sur la guillotine d'une écluse"
+                class='img-source' onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2019-alix-leo-responsive.jpg" alt="montage d'un enfant" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2019-allisson.jpg" alt="femme qui boit un thé devant une fenêtre" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+            <img src="/picture/2014-amsterdam-responsive.jpg" alt="maison autour d'une rivière" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+
+            <img src="/picture/2016-lucie-blé.jpg" alt="femme rousse dans un champ de blé" class='img-source'
+                onclick="fullScreenPicture(this.src)">
+        </section>
+
+
+
+    </main>
+    <footer>
+        <div class="color-choice center">
+            <button onclick="changeColorBackground(`white`)">☀</button>
+            <button onclick="changeColorBackground(`grey`)">🌥</button>
+            <button onclick="changeColorBackground(`black`)">🌇</button>
+        </div>
+    </footer>
+    <div id="id_view_image_body"></div>
+    <div id="id_view_image"></div>
+    <script src="script.js"></script>
+</body>
