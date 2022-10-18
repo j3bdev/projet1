@@ -32,20 +32,36 @@ function closeModel() {
   divCacher.style.display = "none";
 }
 
-function changeColorBackground(color) {
-  const root = document.querySelector(":root");
-  switch (color) {
+/* Fonction changement Couleur Theme */
+const root = document.querySelector(":root");
+const thmBtn = document.querySelector(".theme-buton");
+let bgColor =
+  root.style.getPropertyValue(
+    "--background-color"
+  ); /*récupère la valeur par défaut */
+function changeColorBackground() {
+  bgColor =
+    sessionStorage.getItem(
+      "bgColor"
+    ); /* récupere la valeur locale si elle a été créer */
+  switch (bgColor) {
     case `white`:
       root.style.setProperty("--background-color", `white`);
       root.style.setProperty("--font-color", `black`);
+      sessionStorage.setItem("bgColor", "grey");
+      thmBtn.innerHTML = "thème 🌓";
       break;
     case `grey`:
       root.style.setProperty("--background-color", `grey`);
       root.style.setProperty("--font-color", `white`);
+      sessionStorage.setItem("bgColor", "black");
+      thmBtn.innerHTML = "thème 🌑";
       break;
     case `black`:
       root.style.setProperty("--background-color", `black`);
       root.style.setProperty("--font-color", `white`);
+      sessionStorage.setItem("bgColor", "white");
+      thmBtn.innerHTML = "thème ☀️";
       break;
     default:
   }

@@ -21,6 +21,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
+    padding-bottom: 3vw;
 }
 
 .center{
@@ -50,7 +51,7 @@ header{
 
 header h1{
     color: var(--header-font-color) ;
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 /* -------------------------- logo fait main burger --------------------------- */
@@ -61,7 +62,7 @@ header h1{
     width: 64px;
     height: 64px;
     background: transparent;
-    margin: 25px 40px 25px 0;
+    margin: 25px 20px 25px 0;
     border: 2px solid white; /* boite carré */
 }
 .bar{
@@ -149,51 +150,72 @@ header h1{
 /* ---------------------------------------------------------------------------- */
 /* ---------------------------------- FOOTER ---------------------------------- */
 /* ---------------------------------------------------------------------------- */
-.color-choice{
-    margin: 3% 0 ;
-}
 
 .color-choice button{
-    font-size: 2rem;
-    /*padding: 5px;*/
-    width: 50px;
-    height: 50px;
-    /*align-items: center;*/
+    font-size: 1.4rem;
     text-align: center;
+    padding: 0 5px;
+    border-radius: 5px;
 }
 
 /* ---------------------------------------------------------------------------- */
 /* --------------------------------- Page Home -------------------------------- */ 
 /* ---------------------------------------------------------------------------- */
 .main_picture{
+    position: static;
     padding-top: var(--header-height); /* décalage du contenu mais pas de la boite */
     /* la boite commence au top mais son contenu a la hauteur de la variable */
+    
 }
 .main_picture img{
     height: calc(100vh - var(--header-height));
     width: 100vw;
     object-fit: cover; /* permet a l'image de ce caller sur le premier parametre qui lui plait */
 }
+.main_picture h1
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    top : calc(((100vh + var(--header-height))/2) - 30px );
+    left: calc(50vw - 100px);
+    background-color: rgba(125,125,125,0.5);
+
+}
+
+.presentation h1{
+    margin: 2vw 0;
+}
 .presentation{
-    margin: 5vw;
+    margin: 0 5vw 5vw 5vw;
     color: var(--font-color);
     font-size: 1.3rem;
 }    
 
 .bouton-page-home{
     background: linear-gradient(lightgrey, black);
-    align-self: center;
     padding: 5px 20px;
     font-size: 2em;
     color: white;
     border: 1px grey solid;
     border-radius: 5px;
-    margin-bottom: 50px;
+    margin-bottom: 2vw;
 }
 
 /* ---------------------------------------------------------------------------- */
 /* -------------------------------- Page Galerie ------------------------------ */
 /* ---------------------------------------------------------------------------- */
+.top{
+    display: none;
+    padding-top: calc(var(--header-height) + 5px);
+}
+.bottom{
+    display: block;
+}
+
 .galerie{
     padding-top: var(--header-height);
 }
@@ -202,13 +224,10 @@ header h1{
     width: calc(100vw - 1rem) ;
     object-fit: fill;
 }
-/*
-.galerie img:first-child{
-    margin-top: 20px;
-}*/
 
+/* marge sous la dernière image en reponsive */
 .galerie img:last-child{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 
@@ -217,8 +236,6 @@ header h1{
 /* ---------------------------------------------------------------------------- */
 .contact{
     padding-top: var(--header-height);  /* décalage du contenu mais pas de la boite */
-    /*height: 100vh ;*/
-    /*background-color : var(--background-color) ;*/
 }
 
 .contact-p
@@ -271,6 +288,7 @@ input{
 @media screen and (min-width: 581px) {
     header{
         height: var(--header-height);
+        padding: 0 40px;
     }
     .menu{
         display: flex;
@@ -300,16 +318,26 @@ input{
     }
 
     /* ------------------------------------------------------------------------ */
-    /* ----------------------------- Media HOME ---------------------------- */
+    /* ------------------------------ Media HOME ------------------------------ */
 
     /* ------------------------------------------------------------------------ */
-    /* ----------------------------- Media GALERY ---------------------------- */
+    /* ----------------------------- Media GALERY ----------------------------- */
+
+    .top{
+        display: block;
+    }
+    .bottom{
+        display: none;
+    }
+
+
     .galerie{
         display: grid;
         grid-template-columns: repeat(4,auto) ;
         grid-template-rows: repeat(3,auto) ;
         gap: 2vw;      
-        padding: calc(var(--header-height) + 5px) 2vw 0 2vw;
+        /*padding: calc(var(--header-height) + 5px) 2vw 0 2vw;*/
+        padding: 2vw 2vw 0 2vw;
     }
 
     .galerie img{

@@ -16,6 +16,7 @@
 <body>
     <header>
         <h1>The jb Book</h1>
+
         <nav class="menu" role="navigation">
             <button class="burger" id="burger" onclick="openCloseNav()">
                 <span class="bar"></span>
@@ -37,6 +38,9 @@
         <section class="main_picture">
             <img srcset="./picture/2016-st-malo-chute-responsive.jpg 800w, ./picture/2016-st-malo-chute.jpg 1620w"
                 sizes="max-width:800px" alt="chute le long d'une digue">
+
+            <h1>Bienvenue</h1>
+
         </section>
         <section class="presentation">
             <h1>Mieux me connaitre</h1>
@@ -87,11 +91,9 @@
         </section>
     </main>
     <footer>
-        <div class="color-choice center">
-            <button onclick="changeColorBackground(`white`)">☀</button>
-            <button onclick="changeColorBackground(`grey`)">🌥</button>
-            <button onclick="changeColorBackground(`black`)">🌇</button>
-        </div>
+        <!-- <div class="color-choice center" id="div-theme-buton">
+            <button id="theme-buton" onclick="changeColorBackground()"> thème 🌑</button>
+        </div> -->
     </footer>
     <script src="script.js"></script>
 </body>
