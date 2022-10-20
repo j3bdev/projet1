@@ -15,8 +15,10 @@
 
 <body>
     <header>
-        <h1>The jb Book</h1>
-        <nav class="menu" role="navigation">
+        <a href="index.html">
+            <h1>The jb Book</h1>
+        </a>
+        <nav class="menu">
             <button class="burger" id="burger" onclick="openCloseNav()">
                 <span class="bar"></span>
             </button>
@@ -35,41 +37,42 @@
     </header>
     <main>
         <section class="contact">
-            <section class="contact-p">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque
-                    placeat ipsum voluptatem nisi
-                    nulla incidunt magnam, omnis voluptates. A ea laboriosam quaerat reiciendis magni illum ab ut
-                    voluptatem
-                    odit quidem placeat unde, totam accusantium omnis reprehenderit delectus recusandae sapiente!
+            <div class="contact-p">
+                <p>Pensez a bien lire ma petite présentation sous l'image de la page d'acceuil.
+                    si vous n'y trouvez pas vos réponses, ou que vous avez un commentaires a me faire.
+                    n'hésitez pas à utiliser le formulaire à suivre
                 </p>
-            </section>
+            </div>
 
-            <form class="formulaire" method="post" action="traitement.php">
+            <form class="formulaire" method="post" action="traitement.php" id="monForm">
 
                 <label for="pseudo">Votre Contact :</label>
 
-                <input type="text" name="pseudo" id="pseudo" placeholder="John Doe" size="30" maxlength="10">
+                <input type="text" name="pseudo" id="pseudo" placeholder="John Doe" size="30" maxlength="10" value="">
                 <!-- eciture grisé dans la cellule 10 caractère max -->
-                <input type="email" name="email" id="email" placeholder="john.doe@mail.fr" size="30">
+                <input type="email" name="email" id="email" placeholder="john.doe@mail.fr" size="30" value="">
 
 
-                <label for="commentaire">Quel type de commentaire ?</label>
-                <select name="commentaire" id="commentaire">
-                    <option value="commentaire">commentaire</option>
-                    <option value="question">question</option>
-                    <option value="compliment">compliment</option>
-                    <option value="autre">autre</option>
+                <label for="choice">Quel type de commentaire ?</label>
+                <select name="checkbox" id="choice">
+                    <option value="commentaire">Commentaire</option>
+                    <option value="question">Question</option>
+                    <option value="compliment">Compliment</option>
+                    <option value="autre">Autre</option>
                 </select>
 
-                <textarea name="ameliorer" id="ameliorer" rows="10">ici texte dans la case</textarea>
+                <textarea name="comment-box" id="comment-box" rows="10" placeholder="ici texte dans la case"></textarea>
 
-                <input type="submit" value="Envoyer" class="bouton-envoyer">
+                <input type="button" value="Envoyer" class="bouton-envoyer" id="send-buton">
             </form>
 
         </section>
     </main>
     <footer>
-
+        <div class="color-choice center">
+            <button class="color-choice center theme-buton" onclick="changeColorBackground()">thème ☀️</button>
+        </div>
     </footer>
     <script src="script.js"></script>
+    <script src="contact.js"></script>
 </body>

@@ -3,6 +3,7 @@
     margin : 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 ::-webkit-scrollbar{
@@ -15,6 +16,8 @@
     --header-height: 114px;
     --navbar-color : white;  /* Changer la couleur du burger */
     --header-font-color : white;
+    --img-title-width : 300px;
+    --img-title-height : 60px ;
 }
 
 /* ------------------------------- Début du Code ------------------------------ */
@@ -22,6 +25,7 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
     padding-bottom: 3vw;
+    
 }
 
 .center{
@@ -116,7 +120,6 @@ header h1{
 }
 
 .item{ 
-    text-decoration: none;
     color: var(--header-font-color) ;
     font-size: 2.5rem;
     white-space: nowrap;
@@ -178,11 +181,12 @@ header h1{
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 200px;
-    height: 60px;
-    top : calc(((100vh + var(--header-height))/2) - 30px );
-    left: calc(50vw - 100px);
+    width: var(--img-title-width );
+    height: var(--img-title-height);
+    top : calc(((100vh + var(--header-height))/2) - (calc(var(--img-title-height)/2)) );
+    left: calc(50vw - calc(var(--img-title-width)/2));
     background-color: rgba(125,125,125,0.5);
+    font-size: 3rem;
 
 }
 
@@ -243,6 +247,7 @@ header h1{
     background-color: grey;
     padding: 3%;
     margin: 5%;
+    font-size: 1.2rem;
 }
 
 .formulaire{
@@ -251,6 +256,7 @@ header h1{
     align-items: center;
     width: 90vw;
     margin: 5%;
+    color: white;
 }
 
 .formulaire:last-child{
@@ -269,18 +275,15 @@ input{
 }
 
 .bouton-envoyer{
-    font-size: large;
+    font-size: 1.5rem;
     padding: 5px 10px;  
+    border: 1px grey solid;
+    border-radius: 5px;
 }
 
 :required { 
     background-color: red;
  }
-
-/*
- @media screen and (max-width: 480px) {
-    /* ne pas utiliser tant que je suis sur format au dessus de smartphone
-}*/
 
 /* ---------------------------------------------------------------------------- */
 /*                                   MEDIA QUERY                                */
@@ -306,10 +309,7 @@ input{
         justify-content: space-between;
         background-color: initial;
         transition: none;
-        /*margin-left: 0;*/
         width: initial;
-       /* left: initial ;
-        right: initial;*/
     
     }
     .item:hover{

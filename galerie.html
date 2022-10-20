@@ -15,9 +15,11 @@
 
 <body>
     <header>
-        <h1>The jb Book</h1>
+        <a href="index.html">
+            <h1>The jb Book</h1>
+        </a>
 
-        <nav class="menu" role="navigation">
+        <nav class="menu">
             <button class="burger" id="burger" onclick="openCloseNav()">
                 <span class="bar"></span>
             </button>
@@ -36,7 +38,7 @@
     </header>
     <main>
         <div id="hiden-div" onclick="closeModel()">
-            <img class="modal-content" id="full-image">
+            <img class="modal-content" id="full-image" src="#" alt="#">
         </div>
         <div class="color-choice center top">
             <button class="color-choice center theme-buton" onclick="changeColorBackground()">thème ☀️</button>
@@ -44,7 +46,7 @@
 
         <section class="galerie">
             <img src="./picture/2013-kyoto-palais.jpg" alt="Kinkaku-ji palais doré de Kyoto" class='img-source'
-                onclick="fullScreenPicture(this.src)">
+                onclick="fullScreenPicture(this.src)" loading="lazy">
             <img src="./picture/2016-ecosse-culloden.jpg" alt="Maison en pierre sur le lieu de la bataille de culloden"
                 class='img-source' onclick="fullScreenPicture(this.src)">
             <img src="./picture/2016-yasmine-vert-responsive.jpg" alt="femme rousse sur fond vert" class='img-source'
@@ -75,12 +77,11 @@
 
     </main>
     <footer>
-        <footer>
-            <div class="color-choice center bottom">
-                <button class="theme-buton" onclick="changeColorBackground()">thème ☀️</button>
-            </div>
-        </footer>
-        <div id="id_view_image_body"></div>
-        <div id="id_view_image"></div>
-        <script src="script.js"></script>
+        <div class="color-choice center bottom">
+            <button class="theme-buton" onclick="changeColorBackground()">thème ☀️</button>
+        </div>
+        <!-- <div id="id_view_image_body"></div>
+                <div id="id_view_image"></div> -->
+    </footer>
+    <script src="script.js"></script>
 </body>

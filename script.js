@@ -35,33 +35,43 @@ function closeModel() {
 /* Fonction changement Couleur Theme */
 const root = document.querySelector(":root");
 const thmBtn = document.querySelector(".theme-buton");
-let bgColor =
-  root.style.getPropertyValue(
-    "--background-color"
-  ); /*récupère la valeur par défaut */
-function changeColorBackground() {
-  bgColor =
-    sessionStorage.getItem(
-      "bgColor"
-    ); /* récupere la valeur locale si elle a été créer */
+
+changeColorBackground(true);
+function changeColorBackground(boolean) {
+  let bgColor = sessionStorage.getItem("bgColor");
+  if (!boolean) {
+    if (bgColor === `white`) bgColor = `grey`;
+    else if (bgColor === `grey`) bgColor = `black`;
+    else if (bgColor === `black`) bgColor = `white`;
+  }
+
   switch (bgColor) {
     case `white`:
       root.style.setProperty("--background-color", `white`);
       root.style.setProperty("--font-color", `black`);
-      sessionStorage.setItem("bgColor", "grey");
+      if (!boolean) {
+        sessionStorage.setItem("bgColor", "white");
+      }
       thmBtn.innerHTML = "thème 🌓";
+
       break;
     case `grey`:
       root.style.setProperty("--background-color", `grey`);
       root.style.setProperty("--font-color", `white`);
-      sessionStorage.setItem("bgColor", "black");
+      if (!boolean) {
+        sessionStorage.setItem("bgColor", "grey");
+      }
       thmBtn.innerHTML = "thème 🌑";
+
       break;
     case `black`:
       root.style.setProperty("--background-color", `black`);
       root.style.setProperty("--font-color", `white`);
-      sessionStorage.setItem("bgColor", "white");
+      if (!boolean) {
+        sessionStorage.setItem("bgColor", "black");
+      }
       thmBtn.innerHTML = "thème ☀️";
+
       break;
     default:
   }

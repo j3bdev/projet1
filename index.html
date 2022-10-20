@@ -15,9 +15,11 @@
 
 <body>
     <header>
-        <h1>The jb Book</h1>
+        <a href="index.html">
+            <h1>The jb Book</h1>
+        </a>
 
-        <nav class="menu" role="navigation">
+        <nav class="menu">
             <button class="burger" id="burger" onclick="openCloseNav()">
                 <span class="bar"></span>
             </button>
@@ -36,8 +38,12 @@
     </header>
     <main>
         <section class="main_picture">
-            <img srcset="./picture/2016-st-malo-chute-responsive.jpg 800w, ./picture/2016-st-malo-chute.jpg 1620w"
-                sizes="max-width:800px" alt="chute le long d'une digue">
+            <picture>
+                <source media="(min-width:800px)" srcset="picture/2016-st-malo-chute.jpg">
+                <img src="./picture/2016-st-malo-chute-responsive.jpg" alt="chute le long d'une digue">
+            </picture>
+            <!-- <img srcset="./picture/2016-st-malo-chute-responsive.jpg 800w, ./picture/2016-st-malo-chute.jpg 1620w"
+                alt="chute le long d'une digue"> -->
 
             <h1>Bienvenue</h1>
 
@@ -73,7 +79,7 @@
                 Je ne donne pas les images sans signature sauf certaines conditions. Qui seront vu ensemble.
                 Si vous souhaitez que votre nom ou votre visage n'apparaisse pas sur les photos ou en commentaire il
                 suffit de me le dire pour la préparation du projet et le shooting prendra en compte ces conditions. il
-                se peut aussi que je garde ces images uniquement pour une <em>exposition</em> et aucune publication sur
+                se peut aussi que je garde ces images uniquement pour une exposition et aucune publication sur
                 internet.
                 <br>
                 Lors de la signature du contrat, n'oubliez pas de préciser si vous souhaitez utiliser un pseudonyme, que
@@ -91,9 +97,9 @@
         </section>
     </main>
     <footer>
-        <!-- <div class="color-choice center" id="div-theme-buton">
-            <button id="theme-buton" onclick="changeColorBackground()"> thème 🌑</button>
-        </div> -->
+        <div class="color-choice center">
+            <button class="color-choice center theme-buton" onclick="changeColorBackground()">thème ☀️</button>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
