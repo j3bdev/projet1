@@ -33,11 +33,15 @@ function closeModel() {
 }
 
 /* Fonction changement Couleur Theme */
-const root = document.querySelector(":root");
-const thmBtn = document.querySelector(".theme-buton");
 
 changeColorBackground(true);
 function changeColorBackground(boolean) {
+  const root = document.querySelector(":root");
+  const thmBtn = document.querySelector(".theme-buton");
+
+  if (sessionStorage.getItem("bgColor") == null) {
+    sessionStorage.setItem("bgColor", "black");
+  }
   let bgColor = sessionStorage.getItem("bgColor");
   if (!boolean) {
     if (bgColor === `white`) bgColor = `grey`;
@@ -74,5 +78,6 @@ function changeColorBackground(boolean) {
 
       break;
     default:
+      console.log("action switch en defaut");
   }
 }

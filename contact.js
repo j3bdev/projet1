@@ -19,12 +19,14 @@ function sendComment() {
     alert(`Veuillez remplir tous les champs`);
     return;
   }
-  let requete = {
+  let requete = JSON.stringify({
     pseudo: myName.value,
     email: email.value,
     checkbox: choice.value,
     commentBox: commentBox.value,
-  };
+  });
   console.log(requete);
-  alert(`Votre message sera traité dans les plus bref délais`);
+  alert(
+    `Votre message sera traité dans les plus bref délais / le Json est ${requete}`
+  );
 }
