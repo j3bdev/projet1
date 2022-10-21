@@ -11,7 +11,7 @@ function sendComment() {
   console.log(myName.value);
   console.log(email.value);
   console.log(commentBox.value);
-  if (42 === parseInt(commentBox.value))
+  if (choice.value === "question" && 42 === parseInt(commentBox.value))
     alert(
       `C'est la réponse à La grande question sur la vie, l'univers et le reste`
     );
