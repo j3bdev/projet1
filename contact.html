@@ -36,35 +36,37 @@
         </nav>
     </header>
     <main>
-        <section class="contact">
-            <div class="contact-p">
-                <p>Pensez à bien lire ma petite présentation sous l'image de la page d'acceuil.
-                    Si vous n'y trouvez pas vos réponses, ou que vous avez un commentaire à me faire,
-                    n'hésitez pas à utiliser le formulaire à suivre.
-                </p>
+
+        <section class="contact-page">
+            <section class="contact-picture">
+                <img src="./picture/2018-alisson-gorges-responsive.jpg"
+                    alt="femme brune posé sur la guillotine d'une écluse" class='img-source' loading="lazy">
+            </section>
+            <div class="contact">
+                <div class="contact-p">
+                    <p>Pensez à bien lire ma petite présentation sous l'image de la page d'acceuil.
+                        Si vous n'y trouvez pas vos réponses, ou que vous avez un commentaire à me faire,
+                        n'hésitez pas à utiliser le formulaire à suivre.
+                    </p>
+                </div>
+                <form class="formulaire" method="post" action="traitement.php" id="monForm">
+                    <label for="pseudo">Votre Contact :</label>
+                    <input type="text" name="pseudo" id="pseudo" placeholder="John Doe" size="30" maxlength="10"
+                        value="">
+                    <!-- eciture grisé dans la cellule 10 caractère max -->
+                    <input type="email" name="email" id="email" placeholder="john.doe@mail.fr" size="30" value="">
+                    <label for="choice">Quel type de commentaire ?</label>
+                    <select name="checkbox" id="choice">
+                        <option value="commentaire">Commentaire</option>
+                        <option value="question">Question</option>
+                        <option value="compliment">Compliment</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <textarea name="comment-box" id="comment-box" rows="10"
+                        placeholder="ici texte dans la case"></textarea>
+                    <input type="button" value="Envoyer" class="bouton-envoyer" id="send-buton">
+                </form>
             </div>
-
-            <form class="formulaire" method="post" action="traitement.php" id="monForm">
-
-                <label for="pseudo">Votre Contact :</label>
-
-                <input type="text" name="pseudo" id="pseudo" placeholder="John Doe" size="30" maxlength="10" value="">
-                <!-- eciture grisé dans la cellule 10 caractère max -->
-                <input type="email" name="email" id="email" placeholder="john.doe@mail.fr" size="30" value="">
-
-
-                <label for="choice">Quel type de commentaire ?</label>
-                <select name="checkbox" id="choice">
-                    <option value="commentaire">Commentaire</option>
-                    <option value="question">Question</option>
-                    <option value="compliment">Compliment</option>
-                    <option value="autre">Autre</option>
-                </select>
-
-                <textarea name="comment-box" id="comment-box" rows="10" placeholder="ici texte dans la case"></textarea>
-
-                <input type="button" value="Envoyer" class="bouton-envoyer" id="send-buton">
-            </form>
 
         </section>
     </main>

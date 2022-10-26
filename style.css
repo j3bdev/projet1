@@ -112,7 +112,7 @@ header h1{
     padding-right: 25px;
     top: calc(64px + 50px);
     width: 0;
-    left: 100vw ;
+    left: 180vw ;
     right: -100vw;
 }
 
@@ -239,8 +239,13 @@ header h1{
 /* ---------------------------------------------------------------------------- */
 /* ------------------------------- Page Contact ------------------------------- */
 /* ---------------------------------------------------------------------------- */
-.contact{
+
+.contact-page{
     padding-top: var(--header-height);  /* décalage du contenu mais pas de la boite */
+}
+
+.contact-picture{
+   display: none;
 }
 
 .contact-p
@@ -400,13 +405,24 @@ input{
         margin: auto;
         width: 80vw;
     }
+
 }
 
 
-@media screen and (min-width: 881px) {
+@media screen and (min-width: 1200px) {
     .contact-p,
     .formulaire{
         margin: auto;
         width: 60vw;
+    }
+    .contact-page{
+        /*padding-top: var(--header-height);  /* décalage du contenu mais pas de la boite */
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-picture{
+        display: initial;
+        margin-right: 40px;
     }
 }
