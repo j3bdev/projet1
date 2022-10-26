@@ -27,6 +27,6 @@ function sendComment() {
   });
   console.log(requete);
   alert(
-    `Votre message sera traité dans les plus bref délais / le Json est ${requete}`
+    `Votre message sera traité dans les plus brefs délais / le Json est ${requete}`
   );
 }
